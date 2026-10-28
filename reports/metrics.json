@@ -1,0 +1,79 @@
+{
+  "cv_station_level": [
+    {
+      "model": "Baseline (mean latitude)",
+      "station MAE (deg)": 1.5565,
+      "station RMSE (deg)": 2.0713,
+      "station median AE (deg)": 1.3122,
+      "month-level MAE (deg)": 1.3489,
+      "fit time (s)": 0.0225,
+      "lift vs baseline": 0.0
+    },
+    {
+      "model": "Ridge",
+      "station MAE (deg)": 1.4048,
+      "station RMSE (deg)": 2.0152,
+      "station median AE (deg)": 1.0892,
+      "month-level MAE (deg)": 1.3897,
+      "fit time (s)": 0.881,
+      "lift vs baseline": 0.0975
+    },
+    {
+      "model": "Random Forest",
+      "station MAE (deg)": 1.2499,
+      "station RMSE (deg)": 1.9297,
+      "station median AE (deg)": 0.7282,
+      "month-level MAE (deg)": 1.0644,
+      "fit time (s)": 112.0833,
+      "lift vs baseline": 0.197
+    },
+    {
+      "model": "Gradient Boosting (HGB)",
+      "station MAE (deg)": 1.143,
+      "station RMSE (deg)": 1.7836,
+      "station median AE (deg)": 0.6678,
+      "month-level MAE (deg)": 1.0459,
+      "fit time (s)": 17.234,
+      "lift vs baseline": 0.2657
+    }
+  ],
+  "physics": {
+    "n_valid": 31,
+    "n_total": 43,
+    "lat_mae": 1.6373371425806456,
+    "lat_p90": 3.8686111,
+    "lat_bias": 0.536672924516129,
+    "lon_mae": 1.015799239354839
+  },
+  "matching": {
+    "threshold": 0.5300000000000002,
+    "top1_accuracy": 0.8518518518518519,
+    "recall_known": 0.7777777777777778,
+    "reject_new": 0.7407407407407407,
+    "balanced_accuracy": 0.7592592592592593
+  },
+  "novelty_threshold": 5.958712605624788,
+  "simulation": [
+    {
+      "scenario": "known station",
+      "MAE": 0.3079,
+      "median_AE": 0.0,
+      "share_matched": 0.8148,
+      "ML-only MAE": 1.0427
+    },
+    {
+      "scenario": "new station",
+      "MAE": 1.089,
+      "median_AE": 0.6737,
+      "share_matched": 0.2593,
+      "ML-only MAE": 1.0427
+    }
+  ],
+  "ps2_status_counts": {
+    "known_ps1_station": 22,
+    "new_in_region": 8,
+    "new_out_of_region": 3,
+    "insufficient_data": 2
+  },
+  "runtime_s": 177.2
+}

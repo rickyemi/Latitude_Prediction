@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "latpred"
+version = "1.0.0"
+description = "Recover weather-station latitude from weather observations and detect stations outside the training region."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Yemi Odeyemi" }]
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.1",
+  "scipy>=1.11",
+  "scikit-learn>=1.4",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+notebook = ["jupyter_client", "ipykernel", "nbconvert", "nbformat"]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.scripts]
+latpred = "latpred.pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

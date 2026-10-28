@@ -1,0 +1,10 @@
+# Runtime + notebook execution (pinned for reproducibility; tested with Python 3.11 and 3.13)
+numpy==2.2.6
+pandas==2.2.3
+scipy==1.15.3
+scikit-learn==1.6.1
+matplotlib==3.10.3
+nbformat==5.10.4
+nbconvert==7.16.6
+ipykernel==6.29.5
+jupyter_client==8.6.3
