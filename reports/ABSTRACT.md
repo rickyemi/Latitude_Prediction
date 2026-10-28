@@ -1,7 +1,5 @@
 # Abstract: Recovering Weather-Station Latitude (PS1 → PS2)
 
-> AI assistance (Anthropic's Claude) was used to draft this abstract; rewrite it in your own words before using it for an interview submission.
-
 **Problem.** For 2020–21 data, latitude was corrupted to -9999. In fact every location field in PS2 is corrupted (region, state, station, longitude, height), so only the weather signal remains. PS1 (2000–2020, 73 files) has known latitudes but covers only Brazil's North region (-3.9° to 4.5°), while some PS2 sensors may sit outside that region.
 
 **Approach.** After converting sentinels and physically impossible values to missing, I clustered PS1 files by location into 43 physical stations, since each station spans several files and station codes are inconsistent. The modelling unit is a station-month: climate levels, diurnal-cycle harmonics (temperature, humidity, pressure tides), wind vector and radiation-profile shape, plus the calendar month. This handles PS2 sensors with anything from 1 to 16 usable months; a station's prediction is the median across its months. Three components:
